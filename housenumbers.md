@@ -34,13 +34,6 @@ overpassURI = 'http://overpass-api.de/api/interpreter'
 queryURI = paste(overpassURI, '?data=', URLencode(query), sep='')
 mtl <- read.delim(url(queryURI), stringsAsFactors = FALSE)
 mtl$addr.housenumber = as.numeric(mtl$addr.housenumber)
-```
-
-```
-## Warning: NAs introduced by coercion
-```
-
-```r
 mtl = mtl[sample.int(nrow(mtl)),]
 head(mtl)
 ```
@@ -102,11 +95,6 @@ plot +
     panel.background = element_blank()
   )
 dev.off()
-```
-
-```
-## quartz_off_screen 
-##                 2
 ```
 
 And here's the final output again:
